@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
 
   res.render('home.hbs', {
     welcomeTitle: "Welcome to my Website",
-    pageTitle: "Welcome",
+    pageTitle: "Welcome Home",
     page: "Home Page",
 
   })
@@ -57,6 +57,18 @@ app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: "About Title",
 
+  });
+})
+
+hbs.registerHelper('upperCaseProjects', (text) => {
+  return text.toUpperCase();
+});
+
+app.get('/projects',(req, res) => {
+  res.render('projects.hbs', {
+    projectTitle: "Welcome to Projects Page",
+    projectDescription: "My Projects Portfolio",
+    pageTitle: "Projects Page"
   });
 })
 
